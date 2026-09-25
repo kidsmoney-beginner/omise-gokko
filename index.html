@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>おみせやさんごっこ ビギナークラス</title>
+<meta name="description" content="お金の価値観は、小さいうちの体験で育つ。こども店長になって、お金と「ありがとう」の関係を体験する60分。はじめてのキッズマネースクールはビギナークラスから。参加費無料。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="おみせやさんごっこ ビギナークラス">
+<meta property="og:description" content="お金の価値観は、小さいうちの体験で育つ。こども店長になって、お金と「ありがとう」の関係を体験する60分。はじめてのキッズマネースクールはビギナークラスから。参加費無料。">
+<meta property="og:image" content="images/hero-banner.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<!-- ===== ヘッダー ===== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="#top" class="logo">
+      <span class="logo__sub">キッズマネースクール ビギナークラス</span>
+      <span class="logo__main">おみせやさんごっこ</span>
+    </a>
+    <nav class="nav">
+      <a href="#why">なぜ今?</a>
+      <a href="#flow">体験の内容</a>
+      <a href="#schedule">日程</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <a href="#" class="btn btn--small" data-form>予約する</a>
+  </div>
+  <div class="bunting" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+
+  <!-- ① 注意をひく:子どもの未来の話から入る -->
+  <section class="hero">
+    <h1 class="hero__banner">
+      <img src="images/hero-banner.jpg" width="1672" height="941"
+           alt="キッズマネースクール ビギナークラス お金のことを楽しく学ぼう! おみせやさんごっこ〜お金の大切さを、遊びながら学べる体験プログラム〜">
+    </h1>
+    <div class="hero__body">
+      <p class="hero__catch">お金の価値観は、<br class="sp"><span class="hero__catch-em">小さいうちの体験</span>で育つ。</p>
+      <p class="hero__lead"><b>はじめてのキッズマネースクールは、<br class="sp">ビギナークラスから。</b></p>
+      <ul class="badges">
+        <li class="badge badge--free"><span class="badge__small">参加費</span><span class="badge__big">無料</span></li>
+        <li class="badge"><span class="badge__small">対象</span><span class="badge__big">4〜10歳</span></li>
+        <li class="badge"><span class="badge__small">時間</span><span class="badge__big">60分</span></li>
+      </ul>
+      <p class="next" id="next" hidden>次回開催 <b id="next-text"></b></p>
+      <a href="#schedule" class="btn btn--large">近くの開催日程を見る</a>
+      <p class="btn-note"><span id="area-list">大阪・兵庫・広島</span>の<span id="event-count">24</span>会場で開催・各回先着順</p>
+    </div>
+  </section>
+
+  <!-- 信頼:メディア掲載 -->
+  <section class="media" aria-label="メディア掲載">
+    <p class="media__title">キッズマネースクールは、多くのメディアで紹介されています</p>
+    <ul class="media__list">
+      <li>NHK「所さん!事件ですよ」「おはよう日本」</li>
+      <li>TBS「THE TIME,」「ひるおび」</li>
+      <li>日経新聞</li>
+      <li>BS-TBS「報道1930」</li>
+      <li>テレビ朝日「サンデーステーション」</li>
+      <li>日本テレビ「DayDay.」</li>
+      <li>フジテレビ「めざましテレビ」</li>
+      <li>ほか多数</li>
+    </ul>
+  </section>
+
+  <!-- ② 問題提起:なぜ小さいうちから? -->
+  <section class="section why" id="why">
+    <p class="eyebrow">なぜ今、お金の勉強?</p>
+    <h2 class="section__title">子どもたちは、<br class="sp">親の時代とはちがう<br class="sp">「お金の世界」で大人になります</h2>
+    <ul class="facts">
+      <li class="fact">
+        <p class="fact__big">18<small>歳</small></p>
+        <h3 class="fact__title">18歳で「大人」になる</h3>
+        <p>2022年4月から成年年齢は18歳に。親の同意なしに、クレジットカードやローンの契約ができる年齢です。</p>
+      </li>
+      <li class="fact">
+        <p class="fact__big">4<small>割超</small></p>
+        <h3 class="fact__title">お金が「見えない」時代</h3>
+        <p>買い物の支払いのうち、キャッシュレスはすでに4割超(経済産業省・2024年)。お金が減る実感を持ちにくくなっています。</p>
+      </li>
+      <li class="fact">
+        <p class="fact__big">7<small>歳</small></p>
+        <h3 class="fact__title">お金の習慣は早くから</h3>
+        <p>英ケンブリッジ大学の研究では、お金とのつきあい方の土台は7歳ごろまでにできはじめるとされています。</p>
+      </li>
+    </ul>
+    <p class="why__turn">
+      でも、お金のことを<br class="sp">おうちで教えるのは、むずかしいもの。
+    </p>
+    <ul class="worries__list">
+      <li class="bubble">おこづかい、いつから・いくら渡せばいいの?</li>
+      <li class="bubble">欲しいものをすぐ「買って!」と言われる…</li>
+      <li class="bubble">お金の大切さ、どう伝えたらいいか分からない</li>
+    </ul>
+  </section>
+
+  <!-- ③ 解決策:体験で学ぶ -->
+  <section class="section section--sky" id="learn">
+    <p class="eyebrow">だから、キッズマネースクール</p>
+    <h2 class="section__title">教えるより、<br class="sp">「体験」で伝える</h2>
+    <div class="about">
+      <div class="about__photo">
+        <img src="images/kids-bill.jpg" alt="お札を持ってうれしそうな男の子" loading="lazy">
+      </div>
+      <div class="about__text">
+        <p>
+          お金の話は、言葉で説明してもなかなか子どもに届きません。
+          キッズマネースクールでは、子どもが<b>自分で働き、自分で売って、お金を受け取る</b>体験を通して、
+        </p>
+        <p class="about__quote">
+          お金は汚いものではなく、<br>
+          「ありがとう」と交換する<br class="sp">すばらしいもの
+        </p>
+        <p>だということを、自然と感じてもらいます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ 体験の具体像 -->
+  <section class="section" id="flow">
+    <p class="eyebrow">当日の体験</p>
+    <h2 class="section__title">こども店長になって<br class="sp">お店をOPEN!</h2>
+    <ol class="steps">
+      <li class="step">
+        <img src="images/drawing.jpg" alt="真剣に色を塗る女の子" class="step__img" loading="lazy">
+        <span class="step__num">STEP 1</span>
+        <h3 class="step__title">仕入れ・開店準備</h3>
+        <p>色えんぴつやはさみを使って、自分のお店の準備をします。</p>
+      </li>
+      <li class="step">
+        <img src="images/counting.jpg" alt="講師とお金を数える男の子" class="step__img" loading="lazy">
+        <span class="step__num">STEP 2</span>
+        <h3 class="step__title">値段つけ</h3>
+        <p>商品をいくらで売る?値段を自分で考えてつけます。</p>
+      </li>
+      <li class="step">
+        <img src="images/kids-bill.jpg" alt="お札を持つ男の子" class="step__img step__img--shift" loading="lazy">
+        <span class="step__num">STEP 3</span>
+        <h3 class="step__title">販売</h3>
+        <p>こども店長としてお店をOPEN!売る・買うを体験します。</p>
+      </li>
+      <li class="step">
+        <img src="images/classroom.jpg" alt="笑顔で話を聞く子どもたち" class="step__img" loading="lazy">
+        <span class="step__num">STEP 4</span>
+        <h3 class="step__title">ふりかえり</h3>
+        <p>働いてもらうお給料の大切さと、おうちの人への感謝を学びます。</p>
+      </li>
+    </ol>
+
+    <!-- ⑤ 参加後のイメージ -->
+    <div class="grow">
+      <h3 class="grow__title">この60分で育てたいこと</h3>
+      <ul class="grow__list">
+        <li><b>考えて使う力</b>「欲しい」だけでなく「本当に必要?」と考える</li>
+        <li><b>働くことへの理解</b>お金は、だれかの役に立った「ありがとう」のしるし</li>
+        <li><b>家族への感謝</b>おうちの人が毎日がんばって働いていることに気づく</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 共感と信頼:参加した親御さんの声 -->
+  <section class="section voices-sec">
+    <p class="eyebrow">参加した親御さんの声</p>
+    <h2 class="section__title">全国のおみせやさんごっこに<br class="sp">参加したご家族から</h2>
+    <ul class="voices">
+      <li class="voice">
+        <p class="voice__head">「お金は汚い」が変わりました</p>
+        <p class="voice__body">昔から親に『お金は汚い』と言われてきたので、考え方が180度変わりました。</p>
+        <p class="voice__who">大阪の親御さん</p>
+      </li>
+      <li class="voice">
+        <p class="voice__head">小さなこどもでも大丈夫でした</p>
+        <p class="voice__body">1年と年中さんなので難しいかな?と思いながら申し込みましたが、子どももとても興味深そうに先生の話を聞いていて良かったです。</p>
+        <p class="voice__who">福岡の親御さん</p>
+      </li>
+      <li class="voice">
+        <p class="voice__head">「ありがとう」が好きになりました</p>
+        <p class="voice__body">お店屋さんになってお客様と接し、物を売るという経験が出来、本人も楽しかったようです。「ありがとう」という言葉が好きになったようです!</p>
+        <p class="voice__who">名古屋の親御さん</p>
+      </li>
+      <li class="voice">
+        <p class="voice__head">「パパのおかげでいただきます」が伝わりました</p>
+        <p class="voice__body">なぜ、パパのお陰でいただきますなのか、分かったと思います。</p>
+        <p class="voice__who">仙台の親御さん</p>
+      </li>
+    </ul>
+    <p class="voices__src">出典:<a href="https://kids-money.com/koe/page/2?koe_category=oyagosan" target="_blank" rel="noopener">キッズマネースクール公式サイト「親子の声」</a>(一部抜粋)</p>
+  </section>
+
+  <!-- ⑥ 提案:ビギナークラスの内容 -->
+  <section class="section section--sky offer">
+    <p class="eyebrow">はじめての方へ</p>
+    <h2 class="section__title">ビギナークラスは<br class="sp">初参加向けプログラム</h2>
+    <ul class="offer__list">
+      <li class="offer__item">
+        <span class="offer__mark">60分</span>
+        <div>
+          <h3 class="offer__title">60分で全部体験できる完成版</h3>
+          <p>仕入れから販売、ふりかえりまで。どんな子も飽きずに、最後まで楽しめます。</p>
+        </div>
+      </li>
+      <li class="offer__item">
+        <span class="offer__mark">親</span>
+        <div>
+          <h3 class="offer__title">保護者向け「おこづかい教育講習」つき</h3>
+          <p>お子さまがお店の準備をしている時間に、おうちで続けられるおこづかいの渡し方などをお伝えします。</p>
+        </div>
+      </li>
+      <li class="offer__item">
+        <span class="offer__mark">2名</span>
+        <div>
+          <h3 class="offer__title">専門の講師2名が担当</h3>
+          <p>キッズマネースクール認定講師1名と、FP(ファイナンシャルプランナー)有資格者1名が担当します。</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ⑦ 行動:日程と申込み -->
+  <section class="section section--yellow" id="schedule">
+    <h2 class="section__title">開催日程・お申し込み</h2>
+    <p class="section__lead">各回<strong>先着順</strong>です。<br class="sp">お近くの会場を選んでご予約ください。</p>
+
+    <div class="filter" id="filter" role="group" aria-label="地域で絞り込む"></div>
+    <div class="schedule" id="schedule-list"></div>
+    <p class="schedule__updated">日程は毎週月曜日に更新しています(最終更新:<span id="updated"></span>)</p>
+
+    <div class="outline-wrap">
+      <table class="outline">
+        <tr><th>参加費</th><td><strong>無料</strong></td></tr>
+        <tr><th>対象</th><td>4〜10歳のお子さまとその保護者<br><small>※数が数えられればOKです</small></td></tr>
+        <tr><th>時間</th><td>60〜70分(参加人数によって変わります)</td></tr>
+        <tr><th>持ち物</th><td>色えんぴつ、はさみ</td></tr>
+        <tr><th>講師</th><td>キッズマネースクール認定講師 1名/FP有資格者 1名</td></tr>
+        <tr><th>主催</th><td>キッズマネースクール ビギナークラス校</td></tr>
+      </table>
+    </div>
+
+    <p class="assure">参加費無料・しつこい勧誘は一切ありません</p>
+    <div class="apply">
+      <div class="apply__box">
+        <p class="apply__label">WEBで予約</p>
+        <a href="#" class="btn btn--large" data-form>予約フォームを開く</a>
+        <p class="apply__note">24時間以内にSMSで予約完了のお知らせが届きます</p>
+      </div>
+      <div class="apply__box">
+        <p class="apply__label">電話で予約</p>
+        <p class="apply__tel" id="tel">070-8352-4195</p>
+        <button type="button" class="copy" id="copy-tel">番号をコピー</button>
+        <p class="apply__note">担当:米山</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ 最後のひと押し:不安を解消 -->
+  <section class="section" id="faq">
+    <h2 class="section__title">よくある質問</h2>
+    <div class="faq">
+      <details class="faq__item">
+        <summary>本当に無料ですか?あとで何か売られませんか?</summary>
+        <p>参加費は無料です。しつこい勧誘は一切ありませんので、安心してご参加ください。</p>
+      </details>
+      <details class="faq__item">
+        <summary>4歳でも参加できますか?</summary>
+        <p>はい。対象は4〜10歳で、数が数えられれば大丈夫です。</p>
+      </details>
+      <details class="faq__item">
+        <summary>人見知りでも大丈夫ですか?</summary>
+        <p>大丈夫です。講師が一人ひとりに声をかけながら進めるので、はじめてのお子さまも最後まで楽しめます。</p>
+      </details>
+      <details class="faq__item">
+        <summary>どのくらいの時間がかかりますか?</summary>
+        <p>60〜70分です(参加人数によって少し変わります)。</p>
+      </details>
+      <details class="faq__item">
+        <summary>子どもだけで参加できますか?</summary>
+        <p>保護者の方もご一緒にご参加ください。お子さまがお店の準備をしている間、保護者の方にはおこづかい教育の講習のお時間があります。</p>
+      </details>
+      <details class="faq__item">
+        <summary>きょうだいで参加できますか?</summary>
+        <p>はい。予約フォームで、お子さまの参加人数(1〜4名)をお選びください。</p>
+      </details>
+      <details class="faq__item">
+        <summary>予約できたかどうかは、どうやって分かりますか?</summary>
+        <p>予約フォームに入力した電話番号あてに、24時間以内にSMS(ショートメッセージ)で予約完了のお知らせが届きます。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 最後の呼びかけ -->
+  <section class="final">
+    <div class="final__inner">
+      <p class="final__eyebrow">参加費無料・各回先着順</p>
+      <p class="final__lead">お金の価値観が育つのは、<br class="sp">今この時期。<br>親子で、はじめの一歩を。</p>
+      <a href="#schedule" class="btn btn--large btn--white">近くの開催日程を見る</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="footer__name">キッズマネースクール ビギナークラス校</p>
+  <p>お問い合わせ:070-8352-4195(担当:米山)</p>
+</footer>
+
+<!-- スマホ用:画面下に固定の予約ボタン -->
+<div class="sticky-cta">
+  <p class="sticky-cta__text">参加費無料<br>各回先着順</p>
+  <a href="#schedule" class="btn">日程を見る</a>
+</div>
+
+<script src="schedule-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
