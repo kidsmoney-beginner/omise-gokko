@@ -1,7 +1,7 @@
 // 開催日程データ(毎週月曜日0時に申込みフォームの内容から自動更新)
 // full: true にすると「満席」と表示され、予約ボタンが押せなくなります
 // 開催日を過ぎた回は自動で表示されなくなります
-const UPDATED = "2026-09-24";
+const UPDATED = "2026-09-27";
 
 const EVENTS = [
   { date: "2026-09-27", start: "11:00", end: "12:00", pref: "大阪", city: "寝屋川市", venue: "市民会館", address: "大阪府寝屋川市秦町41-1", full: false },
@@ -9,6 +9,7 @@ const EVENTS = [
   { date: "2026-09-27", start: "15:00", end: "16:00", pref: "大阪", city: "枚方市", venue: "楠葉生涯学習市民センター", address: "大阪府枚方市楠葉並木2-29-5", full: false },
   { date: "2026-10-10", start: "11:00", end: "12:00", pref: "大阪", city: "松原市", venue: "ゆめニティ松原", address: "大阪府松原市上田3-6-1", full: false },
   { date: "2026-10-10", start: "13:00", end: "14:00", pref: "大阪", city: "八尾市", venue: "八尾プリズムホール", address: "大阪府八尾市光町2-40", full: false },
+  { date: "2026-10-10", start: "15:00", end: "16:00", pref: "大阪", city: "羽曳野市", venue: "LICはびきの", address: "大阪府羽曳野市軽里1-1-1", full: false },
   { date: "2026-10-18", start: "9:30", end: "10:30", pref: "大阪", city: "大阪市", venue: "旭区民センター", address: "大阪市旭区中宮1-11-14", full: false },
   { date: "2026-10-18", start: "11:30", end: "12:30", pref: "大阪", city: "大阪市", venue: "城東区民センター", address: "大阪市城東区中央3-5-45", full: false },
   { date: "2026-10-18", start: "13:30", end: "14:30", pref: "大阪", city: "大阪市", venue: "鶴見区民センター", address: "大阪市鶴見区横堤5-3-15", full: false },
