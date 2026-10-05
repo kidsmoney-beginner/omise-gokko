@@ -1,7 +1,7 @@
 // 開催日程データ(毎週月曜日0時に申込みフォームの内容から自動更新)
 // full: true にすると「満席」と表示され、予約ボタンが押せなくなります
 // 開催日を過ぎた回は自動で表示されなくなります
-const UPDATED = "2026-10-01";
+const UPDATED = "2026-10-05";
 
 const EVENTS = [
   { date: "2026-10-10", start: "11:00", end: "12:00", pref: "大阪", city: "松原市", venue: "ゆめニティ松原", address: "大阪府松原市上田3-6-1", full: false },
@@ -28,4 +28,6 @@ const EVENTS = [
   { date: "2026-12-12", start: "15:00", end: "16:00", pref: "兵庫", city: "伊丹市", venue: "東リ いたみホール", address: "兵庫県伊丹市宮ノ前1-1-3", full: false },
   { date: "2026-12-20", start: "10:30", end: "11:30", pref: "兵庫", city: "明石市", venue: "ウィズあかし", address: "兵庫県明石市東仲ノ町6-1 アスピア明石北館7〜9階", full: false },
   { date: "2026-12-20", start: "13:00", end: "14:00", pref: "兵庫", city: "姫路市", venue: "姫路市市民会館", address: "兵庫県姫路市総社本町112", full: false },
+  { date: "2026-12-27", start: "13:00", end: "14:00", pref: "大阪", city: "高槻市", venue: "クロスパル高槻", address: "大阪府高槻市紺屋町1-2", full: false },
+  { date: "2026-12-27", start: "15:00", end: "16:00", pref: "大阪", city: "高槻市", venue: "安満遺跡公園", address: "大阪府高槻市八丁畷町12-3", full: false },
 ];
