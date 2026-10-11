@@ -1,12 +1,9 @@
 // 開催日程データ(毎週月曜日0時に申込みフォームの内容から自動更新)
 // full: true にすると「満席」と表示され、予約ボタンが押せなくなります
 // 開催日を過ぎた回は自動で表示されなくなります
-const UPDATED = "2026-10-05";
+const UPDATED = "2026-10-12";
 
 const EVENTS = [
-  { date: "2026-10-10", start: "11:00", end: "12:00", pref: "大阪", city: "松原市", venue: "ゆめニティ松原", address: "大阪府松原市上田3-6-1", full: false },
-  { date: "2026-10-10", start: "13:00", end: "14:00", pref: "大阪", city: "八尾市", venue: "八尾プリズムホール", address: "大阪府八尾市光町2-40", full: false },
-  { date: "2026-10-10", start: "15:00", end: "16:00", pref: "大阪", city: "羽曳野市", venue: "LICはびきの", address: "大阪府羽曳野市軽里1-1-1", full: false },
   { date: "2026-10-18", start: "9:30", end: "10:30", pref: "大阪", city: "大阪市", venue: "旭区民センター", address: "大阪市旭区中宮1-11-14", full: false },
   { date: "2026-10-18", start: "11:30", end: "12:30", pref: "大阪", city: "大阪市", venue: "城東区民センター", address: "大阪市城東区中央3-5-45", full: false },
   { date: "2026-10-18", start: "13:30", end: "14:30", pref: "大阪", city: "大阪市", venue: "鶴見区民センター", address: "大阪市鶴見区横堤5-3-15", full: false },
@@ -30,4 +27,23 @@ const EVENTS = [
   { date: "2026-12-20", start: "13:00", end: "14:00", pref: "兵庫", city: "姫路市", venue: "姫路市市民会館", address: "兵庫県姫路市総社本町112", full: false },
   { date: "2026-12-27", start: "13:00", end: "14:00", pref: "大阪", city: "高槻市", venue: "クロスパル高槻", address: "大阪府高槻市紺屋町1-2", full: false },
   { date: "2026-12-27", start: "15:00", end: "16:00", pref: "大阪", city: "高槻市", venue: "安満遺跡公園", address: "大阪府高槻市八丁畷町12-3", full: false },
+  { date: "2027-01-16", start: "11:00", end: "12:00", pref: "大阪", city: "大阪市", venue: "淀川区民センター", address: "大阪市淀川区野中南2-1-5", full: false },
+  { date: "2027-01-16", start: "13:00", end: "14:00", pref: "大阪", city: "大阪市", venue: "東淀川区民会館", address: "大阪市東淀川区東淡路1-4-53", full: false },
+  { date: "2027-01-16", start: "16:00", end: "17:00", pref: "大阪", city: "大阪市", venue: "大正会館", address: "大阪市大正区千島2-6-15", full: false },
+  { date: "2027-01-31", start: "11:00", end: "12:00", pref: "大阪", city: "池田市", venue: "池田市民文化会館(アゼリアホール)", address: "大阪府池田市天神1-7-1", full: false },
+  { date: "2027-01-31", start: "13:00", end: "14:00", pref: "大阪", city: "茨木市", venue: "おにクル", address: "大阪府茨木市駅前3-9-45", full: false },
+  { date: "2027-01-31", start: "15:00", end: "16:00", pref: "大阪", city: "吹田市", venue: "千里市民センター", address: "大阪府吹田市津雲台1-2-1 千里ニュータウンプラザ内", full: false },
+  { date: "2027-02-06", start: "13:00", end: "14:00", pref: "大阪", city: "大阪市", venue: "天王寺区民センター", address: "大阪市天王寺区生玉寺町7-57", full: false },
+  { date: "2027-02-06", start: "14:30", end: "15:30", pref: "大阪", city: "大阪市", venue: "生野区民センター", address: "大阪市生野区勝山北3-13-30", full: false },
+  { date: "2027-02-21", start: "11:00", end: "12:00", pref: "兵庫", city: "川西市", venue: "キセラ川西プラザ", address: "兵庫県川西市火打1-12-16", full: false },
+  { date: "2027-02-21", start: "13:00", end: "14:00", pref: "大阪", city: "吹田市", venue: "豊一市民センター", address: "大阪府吹田市垂水町1-53-7", full: false },
+  { date: "2027-02-21", start: "15:00", end: "16:00", pref: "大阪", city: "吹田市", venue: "千里丘市民センター", address: "大阪府吹田市千里丘上14-37", full: false },
+  { date: "2027-02-28", start: "9:30", end: "10:30", pref: "大阪", city: "大阪市", venue: "此花区民ホール", address: "", full: false },
+  { date: "2027-02-28", start: "11:10", end: "12:10", pref: "大阪", city: "大阪市", venue: "西区民センター", address: "大阪市西区北堀江4-2-7", full: false },
+  { date: "2027-02-28", start: "13:00", end: "14:00", pref: "大阪", city: "豊中市", venue: "庄内コラボセンター(ショコラ)", address: "大阪府豊中市庄内幸町4-29-1", full: false },
+  { date: "2027-02-28", start: "15:00", end: "16:00", pref: "大阪", city: "豊中市", venue: "千里文化センター「コラボ」", address: "大阪府豊中市新千里東町1-2-2", full: false },
+  { date: "2027-03-22", start: "9:40", end: "10:40", pref: "大阪", city: "大阪市", venue: "北区民センター", address: "大阪市北区扇町2-1-27", full: false },
+  { date: "2027-03-22", start: "11:20", end: "12:20", pref: "大阪", city: "大阪市", venue: "阿倍野区民センター", address: "大阪市阿倍野区阿倍野筋4-19-118", full: false },
+  { date: "2027-03-22", start: "13:10", end: "14:10", pref: "大阪", city: "大阪市", venue: "住吉区民センター", address: "大阪市住吉区南住吉3-15-56", full: false },
+  { date: "2027-03-22", start: "15:00", end: "16:00", pref: "大阪", city: "大阪市", venue: "中央会館", address: "大阪市中央区島之内2-12-31", full: false },
 ];
