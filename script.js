@@ -3,7 +3,7 @@ const FORM_URL = "https://forms.gle/rqD2QmM5DxKUFzcv6";
 
 // 広告の目印をフォームの任意回答へ引き継ぐ。個人情報は保存しない。
 const SOURCE_ENTRY = "entry.600638058";
-const SOURCE_STORAGE = "kidsmoney_referral_v2";
+const SOURCE_STORAGE = "kidsmoney_referral_v3";
 const SOURCE_TTL = 7 * 24 * 60 * 60 * 1000;
 const referralLabel = (search) => {
   const p = new URLSearchParams(search);
@@ -11,14 +11,14 @@ const referralLabel = (search) => {
   if (!["instagram", "ig"].includes(source)) return "";
   const paid = ["paid_social", "paid", "cpc"].includes((p.get("utm_medium") || "").toLowerCase());
   if (!paid) return "Instagram（投稿・プロフィール）";
-  const labels = { ad_a: "O", ad_b: "P" };
+  const labels = { ad_a: "Instagram広告（①伝え方）", ad_b: "Instagram広告（②電子マネー）" };
   const creative = labels[p.get("utm_content")];
   return creative || "Instagram広告";
 };
 const getReferral = () => {
   const p = new URLSearchParams(window.location.search);
   const incoming = referralLabel(window.location.search);
-  const knownLabels = ["Instagram広告", "O", "P", "Instagram（投稿・プロフィール）"];
+  const knownLabels = ["Instagram広告", "Instagram広告（①伝え方）", "Instagram広告（②電子マネー）", "Instagram（投稿・プロフィール）"];
   try {
     // 別の流入元が明示されたら、以前の広告の目印を上書きする。
     if (p.has("utm_source")) {
