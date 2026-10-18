@@ -57,12 +57,11 @@ const linkToForm = (a) => {
 };
 
 // ===== 開催日程 =====
-const today = new Date();
-today.setHours(0, 0, 0, 0);
+const now = new Date();
 
 const events = EVENTS
   .map((e) => ({ ...e, day: new Date(e.date + "T00:00:00") }))
-  .filter((e) => e.day >= today)
+  .filter((e) => new Date(`${e.date}T${e.start.padStart(5, "0")}:00+09:00`) > now)
   .sort((a, b) => a.day - b.day || a.start.localeCompare(b.start, "ja", { numeric: true }));
 
 const listEl = document.getElementById("schedule-list");
