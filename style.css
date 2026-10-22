@@ -486,3 +486,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .hero__body { padding: 0; }
   .hero__catch { font-size: 22px; }
 }
+
+/* 地域を選んで日程へ進む入口 */
+.region-entry { width: 100%; max-width: 440px; margin: 0 auto 14px; }
+.region-entry__title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 7px; }
+.region-entry__links { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.region-entry__link { flex: 1; min-width: 90px; border: 2px solid var(--navy); border-radius: 14px; background: #fff; color: var(--navy); padding: 8px 5px; text-decoration: none; line-height: 1.35; }
+.region-entry__link strong { display: block; font-size: 17px; }
+.region-entry__link span { display: block; font-size: 12px; }
+.region-entry__link:hover, .region-entry__link:focus-visible { background: #e9f5ff; outline-offset: 3px; }
