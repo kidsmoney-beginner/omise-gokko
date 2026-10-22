@@ -1504,19 +1504,6 @@
  ]
 }
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WNY5LHZSXB"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-WNY5LHZSXB', {allow_google_signals:false, allow_ad_personalization_signals:false});
-document.addEventListener('click', function(e){
-  var a = e.target.closest('a, button');
-  if (!a) return;
-  if (a.matches('.slot__btn, [data-form]')) gtag('event', 'reserve_click', {button_location:a.matches('.slot__btn')?'schedule':(a.closest('header')?'header':'form'), transport_type:'beacon'});
-  if (a.id === 'copy-tel') gtag('event','tel_copy');
-});
-</script>
 </head>
 <body>
 <!-- ===== ヘッダー ===== -->
@@ -1811,7 +1798,6 @@ document.addEventListener('click', function(e){
 <footer class="footer">
   <p class="footer__name">キッズマネースクール ビギナークラス校</p>
   <p>お問い合わせ:070-8352-4195(担当:米山)</p>
-<p class="analytics-note"><small>当サイトでは、利用状況の把握と改善のためGoogleアナリティクスを使用し、Cookieを利用して閲覧情報を収集します。予約フォームに入力する氏名・電話番号は解析情報に含めません。<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Googleによるデータの利用について</a></small></p>
 </footer>
 
 <!-- スマホ用:画面下に固定の予約ボタン -->
@@ -1821,6 +1807,6 @@ document.addEventListener('click', function(e){
 </div>
 
 <script src="schedule-data.js"></script>
-<script src="script.js?v=20261018-starttime"></script>
+<script src="script.js"></script>
 </body>
 </html>
