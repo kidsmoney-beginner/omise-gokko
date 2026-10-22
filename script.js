@@ -72,16 +72,18 @@ const prefs = [...new Set(events.map((e) => e.pref))];
 const FIRST_DAYS = 3;
 let expanded = false;
 let currentPref = "すべて";
+let currentCity = "";
+let currentMonth = "";
 const measure = (name, values = {}) => {
   if (typeof window.gtag === 'function') window.gtag('event', name, values);
 };
 
 const render = (pref) => {
   currentPref = pref;
-  const shown = pref === "すべて" ? events : events.filter((e) => e.pref === pref);
+  const shown = events.filter(e => (pref === "すべて" || e.pref === pref) && (!currentCity || e.city === currentCity) && (!currentMonth || e.date.slice(0,7) === currentMonth));
   listEl.innerHTML = "";
   if (!shown.length) {
-    listEl.innerHTML = '<p class="schedule__empty">現在、募集中の日程はありません。次回の開催をお待ちください。</p>';
+    listEl.innerHTML = '<p class="schedule__empty">この条件の募集中日程はありません。市・月・地域の条件を変更してください。</p>';
     return;
   }
 
@@ -107,7 +109,7 @@ const render = (pref) => {
             <span class="slot__time">${e.start}<small>〜${e.end}</small></span>
             <span class="slot__place">
               <span class="slot__venue">${e.city} ${e.venue}</span>
-              <a class="slot__map" href="${map}" target="_blank" rel="noopener" title="${e.address}">地図</a>
+              <a class="slot__map" href="${map}" target="_blank" rel="noopener" title="${e.address}">地図を開く</a><details class="slot-access"><summary>会場アクセス</summary><p>${e.address || e.city + " " + e.venue}</p><a href="${map}" target="_blank" rel="noopener">地図で行き方を調べる</a></details>
             </span>
             ${e.full
               ? '<span class="slot__btn is-disabled" aria-disabled="true">満席</span>'
@@ -143,12 +145,25 @@ const render = (pref) => {
     filterEl.querySelectorAll(".filter__btn").forEach((x) => x.classList.remove("is-active"));
     b.classList.add("is-active");
     expanded = false;
+    currentCity = "";
+    document.getElementById("city-filter").value = "";
     render(p);
     measure('region_select', {region: p, button_location: 'schedule'});
   });
   filterEl.appendChild(b);
 });
 if (prefs.length < 2) filterEl.hidden = true;
+
+const cityFilter = document.getElementById('city-filter');
+const monthFilter = document.getElementById('month-filter');
+[...new Set(events.map(e => e.city))].sort((a,b) => a.localeCompare(b,'ja')).forEach(city => cityFilter.add(new Option(city,city)));
+[...new Set(events.map(e => e.date.slice(0,7)))].forEach(month => monthFilter.add(new Option(month.replace(/(\d+)-(\d+)/,'$1年$2月'),month)));
+cityFilter.addEventListener('change', () => {
+  currentCity = cityFilter.value; expanded = false;
+  if (currentCity) { currentPref = 'すべて'; filterEl.querySelectorAll('button').forEach(b => b.classList.toggle('is-active',b.textContent === currentPref)); }
+  render(currentPref); measure('schedule_filter',{filter_type:'city',city:currentCity});
+});
+monthFilter.addEventListener('change', () => { currentMonth = monthFilter.value; expanded = false; render(currentPref); measure('schedule_filter',{filter_type:'month',month:currentMonth}); });
 
 render("すべて");
 
@@ -163,6 +178,9 @@ if (regionEntry) prefs.forEach((pref) => {
   a.innerHTML = `<strong>${pref}</strong><span>${first.day.getMonth()+1}/${first.day.getDate()}(${WEEK[first.day.getDay()]})〜</span>`;
   a.addEventListener('click', () => {
     expanded = false;
+    currentCity = ""; currentMonth = "";
+    document.getElementById("city-filter").value = "";
+    document.getElementById("month-filter").value = "";
     render(pref);
     filterEl.querySelectorAll('.filter__btn').forEach((b) => {
       b.classList.toggle('is-active', b.textContent === pref);
@@ -234,3 +252,10 @@ const update = () => sticky.classList.toggle("is-show", pastHero && !atSchedule)
 
 new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; update(); }).observe(hero);
 new IntersectionObserver(([e]) => { atSchedule = e.isIntersecting; update(); }).observe(schedule);
+
+document.addEventListener('click', e => {
+  if (e.target.closest('a[href^="tel:"]')) measure('tel_click');
+});
+document.querySelector('#organizer details')?.addEventListener('toggle', e => {
+  if (e.target.open) measure('support_view');
+});
