@@ -1,20 +1,20 @@
 /* チラシと同じ明るい黄色×紺のデザインで統一(ライト表示のみ) */
 :root {
   color-scheme: light;
-  --yellow: #ffde00;
-  --yellow-soft: #fff7cc;
-  --paper: #fffdf5;
-  --sky: #e3f3fc;
-  --navy: #1d4596;
-  --orange: #f7931e;
-  --orange-deep: #e5670f;
-  --red: #e5402b;
-  --ink: #3a2f28;
-  --ink-sub: #6e625a;
+  --yellow: #edf5f2;
+  --yellow-soft: #f1f5f3;
+  --paper: #ffffff;
+  --sky: #f5f8f7;
+  --navy: #243c47;
+  --orange: #14685f;
+  --orange-deep: #14685f;
+  --red: #14685f;
+  --ink: #243c47;
+  --ink-sub: #52636b;
   --white: #ffffff;
-  --line: #efe4c8;
+  --line: #dce5e1;
   --radius: 18px;
-  --shadow: 0 6px 16px rgba(120, 90, 20, 0.12);
+  --shadow: 0 6px 16px rgba(36,60,71,.06);
   --display: "Zen Maru Gothic", "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", sans-serif;
 }
 
@@ -46,13 +46,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   font: inherit; font-weight: 800; color: var(--white);
   background: var(--orange-deep);
   padding: 12px 24px; border-radius: 999px;
-  box-shadow: 0 4px 0 #b44d06;
+  box-shadow: 0 4px 0 #10544d;
   transition: transform .15s, box-shadow .15s;
 }
-.btn:hover { transform: translateY(2px); box-shadow: 0 2px 0 #b44d06; }
+.btn:hover { transform: translateY(2px); box-shadow: 0 2px 0 #10544d; }
 .btn--small { padding: 7px 16px; font-size: 14px; }
 .btn--large { font-size: 20px; padding: 16px 32px; width: 100%; max-width: 420px; }
-.btn--white { background: var(--white); color: var(--orange-deep); box-shadow: 0 4px 0 #d9b98f; }
+.btn--white { background: var(--white); color: var(--orange-deep); box-shadow: 0 4px 0 #dce5e1; }
 .btn-note { font-size: 13px; color: var(--ink-sub); margin-top: 10px; }
 
 /* ===== ヘッダー ===== */
@@ -112,7 +112,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 }
 .badge__small { font-size: 12px; color: var(--ink-sub); font-weight: 700; }
 .badge__big { font-size: 17px; font-weight: 800; color: var(--navy); }
-.badge--free { background: #2fa89b; border-color: #2fa89b; }
+.badge--free { background: #14685f; border-color: #14685f; }
 .badge--free .badge__small, .badge--free .badge__big { color: var(--white); }
 .badge--free .badge__big { font-size: 22px; }
 
@@ -130,8 +130,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 }
 .coin {
   position: absolute; width: 44px; height: 44px; border-radius: 50%;
-  background: #f5c542; color: #9a6a00; font-weight: 800; font-size: 22px;
-  display: flex; align-items: center; justify-content: center; border: 3px solid #e2a918;
+  background: #edf5f2; color: #243c47; font-weight: 800; font-size: 22px;
+  display: flex; align-items: center; justify-content: center; border: 3px solid #dce5e1;
 }
 .coin--a { top: 2%; left: 6%; transform: rotate(-12deg); }
 .coin--b { top: 10%; right: 4%; width: 34px; height: 34px; font-size: 16px; transform: rotate(10deg); }
@@ -246,7 +246,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .outline-wrap { overflow-x: auto; }
 .outline { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius); overflow: hidden; }
 .outline th, .outline td { padding: 13px 16px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 15px; }
-.outline th { width: 26%; background: var(--navy); color: var(--white); font-weight: 800; white-space: nowrap; border-bottom-color: #3a5fae; }
+.outline th { width: 26%; background: var(--navy); color: var(--white); font-weight: 800; white-space: nowrap; border-bottom-color: #dce5e1; }
 .outline tr:last-child th, .outline tr:last-child td { border-bottom: 0; }
 .outline small { color: var(--ink-sub); }
 
@@ -283,7 +283,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .final .btn--white { border: 3px solid var(--orange-deep); }
 
 /* ===== フッター ===== */
-.footer { background: var(--navy); color: #dfe7f7; text-align: center; padding: 28px 16px; font-size: 14px; }
+.footer { background: var(--navy); color: #f1f5f3; text-align: center; padding: 28px 16px; font-size: 14px; }
 .footer__name { font-weight: 800; font-size: 16px; color: var(--white); }
 
 /* ===== スマホ固定ボタン ===== */
@@ -321,7 +321,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .slot__btn {
   display: inline-block; text-decoration: none; cursor: pointer; white-space: nowrap;
   background: var(--orange-deep); color: var(--white); font-weight: 800; font-size: 14px;
-  padding: 7px 16px; border-radius: 999px; box-shadow: 0 3px 0 #b44d06;
+  padding: 7px 16px; border-radius: 999px; box-shadow: 0 3px 0 #10544d;
 }
 .slot__btn.is-disabled { background: #bdbdbd; box-shadow: none; cursor: not-allowed; }
 .slot.is-full .slot__time, .slot.is-full .slot__venue { color: #9a9a9a; }
@@ -494,16 +494,66 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .region-entry__link { flex: 1; min-width: 90px; border: 2px solid var(--navy); border-radius: 14px; background: #fff; color: var(--navy); padding: 8px 5px; text-decoration: none; line-height: 1.35; }
 .region-entry__link strong { display: block; font-size: 17px; }
 .region-entry__link span { display: block; font-size: 12px; }
-.region-entry__link:hover, .region-entry__link:focus-visible { background: #e9f5ff; outline-offset: 3px; }
+.region-entry__link:hover, .region-entry__link:focus-visible { background: #edf5f2; outline-offset: 3px; }
 
 /* 親子それぞれの学び・無料特典・確認できた後援実績 */
-.hero-gift{margin:8px auto;color:#a94708;font-weight:800;font-size:14px}
+.hero-gift{margin:8px auto;color:#14685f;font-weight:800;font-size:14px}
 .hero__lead{font-size:16px;line-height:1.65}
 .benefits{text-align:center}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left;max-width:1000px;margin:28px auto}
-.benefit-grid article{padding:26px;background:#fff;border:2px solid #e3eaf1;border-radius:18px}.benefit-grid h3{font-size:21px;line-height:1.6;margin:12px 0}.benefit-grid p{line-height:1.9}.benefit-label{font-size:13px;font-weight:800;color:#176484;background:#e7f5fa;padding:5px 12px;border-radius:20px}.benefit-grid .benefit-gift{background:#fff7df;border-color:#f5d268}.benefits__close{font-weight:800;margin:24px auto}
-.support{max-width:1000px;margin:auto}.support>p{text-align:center}.support-details{margin:24px auto;border:1px solid #ccd7df;border-radius:12px;padding:18px;background:#fff}.support-details summary{cursor:pointer;font-weight:700;line-height:1.6}.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:24px 0}.support-grid article{padding:12px;border-top:2px solid #dde8ed}.support-grid h3{font-size:17px}.support-grid p,.support-grid blockquote{font-size:14px;line-height:1.8}.support-grid blockquote{margin:12px 0;padding-left:12px;border-left:3px solid #cad6dd}.support-grid small,.support-note{font-size:12px;color:#526576;line-height:1.8}
-.schedule-search{display:flex;justify-content:center;gap:14px;margin:18px auto}.schedule-search label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700}.schedule-search select{max-width:180px;padding:12px;border:1px solid #a8b7c4;border-radius:8px;background:#fff;color:#19354a;font:inherit}.reservation-summary{text-align:center;line-height:1.9;margin:20px auto;font-size:15px}.slot-access{font-size:12px;margin-top:8px}.slot-access summary{cursor:pointer;text-decoration:underline}.slot-access p{margin:8px 0}.apply__tel a{color:inherit;text-decoration:none}.badge__big{white-space:nowrap}
+.benefit-grid article{padding:26px;background:#fff;border:2px solid #dce5e1;border-radius:18px}.benefit-grid h3{font-size:21px;line-height:1.6;margin:12px 0}.benefit-grid p{line-height:1.9}.benefit-label{font-size:13px;font-weight:800;color:#14685f;background:#edf5f2;padding:5px 12px;border-radius:20px}.benefit-grid .benefit-gift{background:#f5f8f7;border-color:#dce5e1}.benefits__close{font-weight:800;margin:24px auto}
+.support{max-width:1000px;margin:auto}.support>p{text-align:center}.support-details{margin:24px auto;border:1px solid #dce5e1;border-radius:12px;padding:18px;background:#fff}.support-details summary{cursor:pointer;font-weight:700;line-height:1.6}.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:24px 0}.support-grid article{padding:12px;border-top:2px solid #dce5e1}.support-grid h3{font-size:17px}.support-grid p,.support-grid blockquote{font-size:14px;line-height:1.8}.support-grid blockquote{margin:12px 0;padding-left:12px;border-left:3px solid #dce5e1}.support-grid small,.support-note{font-size:12px;color:#52636b;line-height:1.8}
+.schedule-search{display:flex;justify-content:center;gap:14px;margin:18px auto}.schedule-search label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700}.schedule-search select{max-width:180px;padding:12px;border:1px solid #a0b3ad;border-radius:8px;background:#fff;color:#243c47;font:inherit}.reservation-summary{text-align:center;line-height:1.9;margin:20px auto;font-size:15px}.slot-access{font-size:12px;margin-top:8px}.slot-access summary{cursor:pointer;text-decoration:underline}.slot-access p{margin:8px 0}.apply__tel a{color:inherit;text-decoration:none}.badge__big{white-space:nowrap}
 @media(max-width:600px){.hero__body{padding-top:12px}.hero__catch{font-size:21px;margin-bottom:8px}.hero__lead{font-size:13px;margin:8px auto}.hero-gift{font-size:12px;margin:6px 0}.hero .badges{margin:12px auto}.hero .badge__big{font-size:20px}.hero .badge__small{font-size:11px}.hero .badge{padding:8px 10px}.hero .region-entry{margin:12px 0}.hero .next{margin:8px 0}.hero .btn-note{font-size:11px}.benefit-grid{grid-template-columns:1fr;gap:12px;margin:20px 0}.benefit-grid article{padding:20px}.benefit-grid h3{font-size:19px;margin:8px 0}.benefit-grid p{font-size:14px}.support-grid{grid-template-columns:1fr;gap:14px}.support-details{padding:15px}.schedule-search{gap:10px}.schedule-search label{display:block;font-size:12px;flex:1}.schedule-search select{display:block;width:100%;max-width:none;margin-top:6px}.reservation-summary{font-size:13px}.support>p{font-size:14px}}
 
 .hero .badge{width:100px;height:72px;border-radius:18px;padding:8px 4px}.hero .badge__big{font-size:16px}.hero .badge--free .badge__big{font-size:22px}
 @media(max-width:600px){.hero .badges{gap:8px}.hero .badge{width:100px;height:70px}.hero .badge__big{font-size:15px}.hero .badge--free .badge__big{font-size:21px}.hero .region-entry{margin:8px 0}.hero .offer__mark{font-size:18px}}
+
+/* 色の役割を固定：白い土台、濃い文字、深いグリーンの操作ボタン */
+.bunting{display:none}
+.hero,.final{background:#f5f8f7}
+.hero{padding:24px 16px 32px;gap:32px}
+.hero__intro{text-align:center;min-width:0;width:100%;max-width:720px;margin:auto}
+.hero__kicker{font-size:13px;color:var(--ink-sub);letter-spacing:.05em}
+.hero__name{font-family:var(--display);font-size:clamp(28px,5vw,42px);line-height:1.4;color:var(--ink);margin:6px 0}
+.hero__school{font-size:12px;color:var(--ink-sub);margin-bottom:16px}
+.hero__cover{width:100%;height:320px;object-fit:cover;object-position:60% 45%;border-radius:16px}
+.hero__catch{background:transparent;color:var(--ink);box-shadow:none;border-radius:0;padding:0;font-size:22px;line-height:1.6;margin:0 0 10px;text-shadow:none}
+.hero__catch-em{color:var(--ink)}
+.hero__lead{color:var(--ink);font-size:15px;line-height:1.8}
+.hero-gift{color:var(--orange-deep);background:transparent}
+.btn,.slot__btn{background:var(--orange-deep);color:#fff;box-shadow:none;border-radius:10px}
+.btn:hover,.slot__btn:hover{background:#10544d;box-shadow:none;transform:none}
+.btn--white,.final .btn--white{background:var(--orange-deep);color:#fff;border:0;box-shadow:none}
+.logo__main,.logo__small{color:var(--ink);text-shadow:none}
+.hero .badge{background:#fff;border:1px solid var(--line);border-radius:12px}
+.hero .badge--free{background:#fff;border-color:var(--line)}
+.hero .badge--free .badge__small{color:var(--ink-sub)}
+.hero .badge--free .badge__big{color:var(--orange-deep)}
+.region-entry__link{border:1px solid var(--line);border-radius:10px;color:var(--ink)}
+.region-entry__link strong,.next b{color:var(--ink)}
+.next{background:transparent;padding:0;border-radius:0}
+.media{background:#fff;border-bottom:1px solid var(--line)}
+.eyebrow{font-weight:700;color:var(--ink-sub)}.eyebrow::before,.eyebrow::after{content:none}
+.benefit-grid article,.benefit-grid .benefit-gift{background:#fff;border:1px solid var(--line)}
+.benefit-label{color:var(--orange-deep);background:#edf5f2}
+.about__quote{text-decoration:none;color:var(--ink);border-left:3px solid var(--orange-deep);border-radius:0;background:transparent}
+.step{border-width:1px}.step__num{background:#edf5f2;color:var(--ink)}
+.offer__mark{background:#edf5f2;color:var(--ink);border-radius:12px}
+.filter__btn{border:1px solid var(--line);color:var(--ink);border-radius:10px;font-weight:700}
+.filter__btn.is-active{background:var(--orange-deep);border-color:var(--orange-deep);color:#fff}
+.day{box-shadow:none;border:1px solid var(--line);border-radius:12px}
+.day__head{background:#edf5f2;color:var(--ink);border-bottom:1px solid var(--line);padding:10px 16px}
+.slot__time{color:var(--ink)}.slot__btn{font-size:13px;padding:10px 12px}
+.outline th{background:#f1f5f3;color:var(--ink)}
+.apply__box{border:1px solid var(--line)}
+.faq__item{border-width:1px}.faq__item summary::before{background:#edf5f2;color:var(--ink)}
+.final__eyebrow{background:transparent;color:var(--ink-sub);font-weight:700;padding:0}
+.footer{background:#243c47}.footer,.footer__name{color:#fff}
+.schedule-free{display:table;background:var(--orange-deep);color:#fff;font-weight:800;font-size:18px;line-height:1.5;padding:8px 22px;border-radius:8px;margin:0 auto 14px}
+.schedule-fee-note{text-align:center;font-size:14px;color:var(--ink);margin:-12px auto 24px;line-height:1.8}
+.reservation-summary{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+.sticky-cta__text{color:var(--ink)}
+@media(min-width:1000px){.hero{padding:40px max(24px,calc((100% - 1200px)/2));grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
+@media(max-width:600px){
+ .hero{display:block;padding:16px 16px 28px}.hero__cover{height:160px;border-radius:12px}.hero__name{font-size:29px}.hero__school{margin-bottom:12px}.hero__body{padding:16px 0 0}.hero__catch{font-size:18px;line-height:1.5;margin-bottom:8px}.hero__lead{font-size:13px;margin:6px auto}.hero-gift{font-size:12px}.hero .badges{margin:10px auto}.hero .region-entry{margin:8px 0}.hero .next{font-size:13px;margin:8px 0}.hero .btn--large{font-size:18px;padding:14px 20px}.section{padding:44px 16px}.slot{grid-template-columns:4.2em minmax(0,1fr) auto;gap:8px;padding:14px 10px}.slot__btn{font-size:12px;padding:10px}.slot__venue{font-size:14px}.schedule-fee-note{font-size:13px}.hero .badge{width:100px;height:62px}.hero .region-entry__link{padding:8px 5px}
+}
