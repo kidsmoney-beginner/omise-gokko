@@ -1,45 +1,6 @@
 // 申込みフォームのURL
 const FORM_URL = "https://forms.gle/rqD2QmM5DxKUFzcv6";
 
-// 広告の目印をフォームの任意回答へ引き継ぐ。個人情報は保存しない。
-const SOURCE_ENTRY = "entry.600638058";
-const SOURCE_STORAGE = "kidsmoney_referral_v3";
-const SOURCE_TTL = 7 * 24 * 60 * 60 * 1000;
-const referralLabel = (search) => {
-  const p = new URLSearchParams(search);
-  const source = (p.get("utm_source") || "").toLowerCase();
-  if (!["instagram", "ig"].includes(source)) return "";
-  const paid = ["paid_social", "paid", "cpc"].includes((p.get("utm_medium") || "").toLowerCase());
-  if (!paid) return "Instagram（投稿・プロフィール）";
-  const labels = { ad_a: "Instagram広告（①伝え方）", ad_b: "Instagram広告（②電子マネー）" };
-  const creative = labels[p.get("utm_content")];
-  return creative || "Instagram広告";
-};
-const getReferral = () => {
-  const p = new URLSearchParams(window.location.search);
-  const incoming = referralLabel(window.location.search);
-  const knownLabels = ["Instagram広告", "Instagram広告（①伝え方）", "Instagram広告（②電子マネー）", "Instagram（投稿・プロフィール）"];
-  try {
-    // 別の流入元が明示されたら、以前の広告の目印を上書きする。
-    if (p.has("utm_source")) {
-      if (incoming) sessionStorage.setItem(SOURCE_STORAGE, JSON.stringify({ label: incoming, at: Date.now() }));
-      else sessionStorage.removeItem(SOURCE_STORAGE);
-      return incoming;
-    }
-    const saved = JSON.parse(sessionStorage.getItem(SOURCE_STORAGE) || "null");
-    if (saved && knownLabels.includes(saved.label) && Number.isFinite(saved.at) && Date.now() - saved.at >= 0 && Date.now() - saved.at < SOURCE_TTL) return saved.label;
-    sessionStorage.removeItem(SOURCE_STORAGE);
-  } catch (_) { /* 保存できなくても、今回のリンクの目印は引き継ぐ。 */ }
-  return incoming;
-};
-const REFERRAL = getReferral();
-const withReferral = (url) => {
-  if (!REFERRAL) return url;
-  const result = new URL(url);
-  result.searchParams.set(SOURCE_ENTRY, REFERRAL);
-  return result.href;
-};
-
 const WEEK = ["日", "月", "火", "水", "木", "金", "土"];
 
 // 日程を選んだ状態でGoogleフォームを開くためのURL
@@ -48,20 +9,21 @@ const PREFILL_BASE = "https://docs.google.com/forms/d/e/1FAIpQLSfetelv97Szc19IsA
 const WEEK_MARK = ["㈰", "㈪", "㈫", "㈬", "㈭", "㈮", "㈯"];
 const choiceLabel = (e) =>
   `${e.city} ${e.venue} ${e.day.getMonth() + 1}月${e.day.getDate()}日${WEEK_MARK[e.day.getDay()]} ${e.start}～${e.end}`;
-const prefillUrl = (e) => withReferral(PREFILL_BASE + encodeURIComponent(choiceLabel(e)));
+const prefillUrl = (e) => PREFILL_BASE + encodeURIComponent(choiceLabel(e));
 
 const linkToForm = (a) => {
-  a.href = REFERRAL ? withReferral(PREFILL_BASE.slice(0, PREFILL_BASE.indexOf("&entry."))) : FORM_URL;
+  a.href = FORM_URL;
   a.target = "_blank";
   a.rel = "noopener";
 };
 
 // ===== 開催日程 =====
-const now = new Date();
+const today = new Date();
+today.setHours(0, 0, 0, 0);
 
 const events = EVENTS
   .map((e) => ({ ...e, day: new Date(e.date + "T00:00:00") }))
-  .filter((e) => new Date(`${e.date}T${e.start.padStart(5, "0")}:00+09:00`) > now)
+  .filter((e) => e.day >= today)
   .sort((a, b) => a.day - b.day || a.start.localeCompare(b.start, "ja", { numeric: true }));
 
 const listEl = document.getElementById("schedule-list");

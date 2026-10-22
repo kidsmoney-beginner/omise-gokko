@@ -35,7 +35,7 @@ const EVENTS = [
   { date: "2027-02-21", start: "11:00", end: "12:00", pref: "兵庫", city: "川西市", venue: "キセラ川西プラザ", address: "兵庫県川西市火打1-12-16", full: false },
   { date: "2027-02-21", start: "13:00", end: "14:00", pref: "大阪", city: "吹田市", venue: "豊一市民センター", address: "大阪府吹田市垂水町1-53-7", full: false },
   { date: "2027-02-21", start: "15:00", end: "16:00", pref: "大阪", city: "吹田市", venue: "千里丘市民センター", address: "大阪府吹田市千里丘上14-37", full: false },
-  { date: "2027-02-28", start: "9:30", end: "10:30", pref: "大阪", city: "大阪市", venue: "此花区民ホール", address: "", full: false },
+  { date: "2027-02-28", start: "9:30", end: "10:30", pref: "大阪", city: "大阪市", venue: "此花区民ホール", address: "大阪市此花区四貫島1-1-18", full: false },
   { date: "2027-02-28", start: "11:10", end: "12:10", pref: "大阪", city: "大阪市", venue: "西区民センター", address: "大阪市西区北堀江4-2-7", full: false },
   { date: "2027-02-28", start: "13:00", end: "14:00", pref: "大阪", city: "豊中市", venue: "庄内コラボセンター(ショコラ)", address: "大阪府豊中市庄内幸町4-29-1", full: false },
   { date: "2027-02-28", start: "15:00", end: "16:00", pref: "大阪", city: "豊中市", venue: "千里文化センター「コラボ」", address: "大阪府豊中市新千里東町1-2-2", full: false },
