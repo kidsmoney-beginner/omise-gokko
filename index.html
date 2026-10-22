@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261022-reservation">
 <meta property="og:type" content="website">
 <meta property="og:title" content="おみせやさんごっこ ビギナークラス">
 <meta property="og:description" content="お金の価値観は、小さいうちの体験で育つ。こども店長になって、お金と「ありがとう」の関係を体験する60分。はじめてのキッズマネースクールはビギナークラスから。参加費無料。">
@@ -1513,7 +1513,7 @@ gtag('config', 'G-WNY5LHZSXB', {allow_google_signals:false, allow_ad_personaliza
 document.addEventListener('click', function(e){
   var a = e.target.closest('a, button');
   if (!a) return;
-  if (a.matches('.slot__btn, [data-form]')) gtag('event', 'reserve_click', {button_location:a.matches('.slot__btn')?'schedule':(a.closest('header')?'header':'form'), transport_type:'beacon'});
+  if (a.matches('.slot__btn, [data-form]')) gtag('event', 'reserve_click', {button_location:a.matches('.slot__btn')?'schedule':(a.closest('header')?'header':'form'), event_date:a.dataset.eventDate || '', venue:a.dataset.venue || '', region:a.dataset.region || '', transport_type:'beacon'});
   if (a.id === 'copy-tel') gtag('event','tel_copy');
 });
 </script>
@@ -1553,6 +1553,10 @@ document.addEventListener('click', function(e){
         <li class="badge"><span class="badge__small">対象</span><span class="badge__big">4〜10歳</span></li>
         <li class="badge"><span class="badge__small">時間</span><span class="badge__big">60分</span></li>
       </ul>
+      <div class="region-entry" aria-label="開催地域から日程を探す">
+        <p class="region-entry__title">お近くの開催日程を選ぶ</p>
+        <div class="region-entry__links" id="region-entry"></div>
+      </div>
       <p class="next" id="next" hidden>次回開催 <b id="next-text"></b></p>
       <a href="#schedule" class="btn btn--large">近くの開催日程を見る</a>
       <p class="btn-note"><span id="area-list">大阪・兵庫・広島</span>の<span id="event-count">24</span>会場で開催・各回先着順</p>
@@ -1734,7 +1738,7 @@ document.addEventListener('click', function(e){
 
     <div class="filter" id="filter" role="group" aria-label="地域で絞り込む"></div>
     <div class="schedule" id="schedule-list"></div>
-    <p class="schedule__updated">日程は毎週月曜日に更新しています(最終更新:<span id="updated"></span>)</p>
+    <p class="schedule__updated">予約フォームと日程を照合済み（確認日：<span id="updated"></span>）</p>
 
     <div class="outline-wrap">
       <table class="outline">
@@ -1821,6 +1825,6 @@ document.addEventListener('click', function(e){
 </div>
 
 <script src="schedule-data.js"></script>
-<script src="script.js?v=20261018-starttime"></script>
+<script src="script.js?v=20261022-reservation"></script>
 </body>
 </html>
