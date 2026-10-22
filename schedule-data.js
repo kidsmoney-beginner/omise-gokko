@@ -1,12 +1,9 @@
 // 開催日程データ(毎週月曜日0時に申込みフォームの内容から自動更新)
 // full: true にすると「満席」と表示され、予約ボタンが押せなくなります
 // 開催日を過ぎた回は自動で表示されなくなります
-const UPDATED = "2026-10-12";
+const UPDATED = "2026-10-22";
 
 const EVENTS = [
-  { date: "2026-10-18", start: "9:30", end: "10:30", pref: "大阪", city: "大阪市", venue: "旭区民センター", address: "大阪市旭区中宮1-11-14", full: false },
-  { date: "2026-10-18", start: "11:30", end: "12:30", pref: "大阪", city: "大阪市", venue: "城東区民センター", address: "大阪市城東区中央3-5-45", full: false },
-  { date: "2026-10-18", start: "13:30", end: "14:30", pref: "大阪", city: "大阪市", venue: "鶴見区民センター", address: "大阪市鶴見区横堤5-3-15", full: false },
   { date: "2026-11-07", start: "11:00", end: "12:00", pref: "大阪", city: "東大阪市", venue: "文化創造館", address: "大阪府東大阪市御厨南2-3-4", full: false },
   { date: "2026-11-07", start: "13:00", end: "14:00", pref: "大阪", city: "東大阪市", venue: "市民多目的センター", address: "大阪府東大阪市高井田元町1-2-13", full: false },
   { date: "2026-11-08", start: "11:00", end: "12:00", pref: "大阪", city: "大阪市", venue: "平野区民センター", address: "大阪市平野区長吉出戸5-3-58", full: false },
