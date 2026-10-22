@@ -72,6 +72,9 @@ const prefs = [...new Set(events.map((e) => e.pref))];
 const FIRST_DAYS = 3;
 let expanded = false;
 let currentPref = "すべて";
+const measure = (name, values = {}) => {
+  if (typeof window.gtag === 'function') window.gtag('event', name, values);
+};
 
 const render = (pref) => {
   currentPref = pref;
@@ -108,7 +111,7 @@ const render = (pref) => {
             </span>
             ${e.full
               ? '<span class="slot__btn is-disabled" aria-disabled="true">満席</span>'
-              : `<a class="slot__btn" href="${prefillUrl(e)}" target="_blank" rel="noopener">予約</a>`}
+              : `<a class="slot__btn" data-event-date="${e.date}" data-region="${e.pref}" data-venue="${e.city} ${e.venue}" href="${prefillUrl(e)}" target="_blank" rel="noopener">予約</a>`}
           </li>`;
         }).join("")}
       </ul>`;
@@ -123,6 +126,7 @@ const render = (pref) => {
     more.textContent = expanded ? "日程を閉じる" : `ほかの日程も見る(あと${rest}回)`;
     more.addEventListener("click", () => {
       expanded = !expanded;
+      measure('schedule_expand', {region: currentPref, expanded: expanded});
       render(currentPref);
       if (!expanded) document.getElementById("schedule").scrollIntoView();
     });
@@ -140,12 +144,49 @@ const render = (pref) => {
     b.classList.add("is-active");
     expanded = false;
     render(p);
+    measure('region_select', {region: p, button_location: 'schedule'});
   });
   filterEl.appendChild(b);
 });
 if (prefs.length < 2) filterEl.hidden = true;
 
 render("すべて");
+
+// 最初の画面から地域を選び、該当地域の日程へ移動する。
+const regionEntry = document.getElementById('region-entry');
+if (regionEntry) prefs.forEach((pref) => {
+  const first = events.find((e) => e.pref === pref && !e.full);
+  if (!first) return;
+  const a = document.createElement('a');
+  a.className = 'region-entry__link';
+  a.href = '#schedule';
+  a.innerHTML = `<strong>${pref}</strong><span>${first.day.getMonth()+1}/${first.day.getDate()}(${WEEK[first.day.getDay()]})〜</span>`;
+  a.addEventListener('click', () => {
+    expanded = false;
+    render(pref);
+    filterEl.querySelectorAll('.filter__btn').forEach((b) => {
+      b.classList.toggle('is-active', b.textContent === pref);
+      b.setAttribute('aria-pressed', String(b.textContent === pref));
+    });
+    measure('region_select', {region: pref, button_location: 'hero'});
+  });
+  regionEntry.appendChild(a);
+});
+
+document.querySelectorAll('a[href="#schedule"]').forEach((a) => {
+  a.addEventListener('click', () => measure('schedule_open', {
+    region: currentPref,
+    button_location: a.closest('.hero') ? 'hero' : (a.closest('.sticky-cta') ? 'sticky' : 'page')
+  }));
+});
+let measuredSchedule = false;
+new IntersectionObserver(([entry], observer) => {
+  if (entry.isIntersecting && !measuredSchedule) {
+    measuredSchedule = true;
+    measure('schedule_view', {region: currentPref});
+    observer.disconnect();
+  }
+}, {threshold: 0.5}).observe(document.querySelector('#schedule .section__title'));
 
 // 最初の画面に「次回開催」を表示(同じ日の市名をまとめる)
 if (events.length) {
