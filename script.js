@@ -80,6 +80,7 @@ const measure = (name, values = {}) => {
 
 const render = (pref) => {
   currentPref = pref;
+  updateCityOptions(pref);
   const shown = events.filter(e => (pref === "すべて" || e.pref === pref) && (!currentCity || e.city === currentCity) && (!currentMonth || e.date.slice(0,7) === currentMonth));
   listEl.innerHTML = "";
   if (!shown.length) {
@@ -113,7 +114,7 @@ const render = (pref) => {
             </span>
             ${e.full
               ? '<span class="slot__btn is-disabled" aria-disabled="true">満席</span>'
-              : `<a class="slot__btn" data-event-date="${e.date}" data-region="${e.pref}" data-venue="${e.city} ${e.venue}" href="${prefillUrl(e)}" target="_blank" rel="noopener">予約</a>`}
+              : `<a class="slot__btn" data-event-date="${e.date}" data-region="${e.pref}" data-venue="${e.city} ${e.venue}" href="${prefillUrl(e)}" target="_blank" rel="noopener">無料で予約</a>`}
           </li>`;
         }).join("")}
       </ul>`;
@@ -156,11 +157,16 @@ if (prefs.length < 2) filterEl.hidden = true;
 
 const cityFilter = document.getElementById('city-filter');
 const monthFilter = document.getElementById('month-filter');
-[...new Set(events.map(e => e.city))].sort((a,b) => a.localeCompare(b,'ja')).forEach(city => cityFilter.add(new Option(city,city)));
+function updateCityOptions(pref) {
+  const cities = [...new Set(events.filter(e => pref === 'すべて' || e.pref === pref).map(e => e.city))].sort((a,b) => a.localeCompare(b,'ja'));
+  if (!cities.includes(currentCity)) currentCity = '';
+  cityFilter.replaceChildren(new Option('すべての市', ''));
+  cities.forEach(city => cityFilter.add(new Option(city, city)));
+  cityFilter.value = currentCity;
+}
 [...new Set(events.map(e => e.date.slice(0,7)))].forEach(month => monthFilter.add(new Option(month.replace(/(\d+)-(\d+)/,'$1年$2月'),month)));
 cityFilter.addEventListener('change', () => {
   currentCity = cityFilter.value; expanded = false;
-  if (currentCity) { currentPref = 'すべて'; filterEl.querySelectorAll('button').forEach(b => b.classList.toggle('is-active',b.textContent === currentPref)); }
   render(currentPref); measure('schedule_filter',{filter_type:'city',city:currentCity});
 });
 monthFilter.addEventListener('change', () => { currentMonth = monthFilter.value; expanded = false; render(currentPref); measure('schedule_filter',{filter_type:'month',month:currentMonth}); });
