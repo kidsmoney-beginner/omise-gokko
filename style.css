@@ -514,12 +514,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .slot__btn{font-size:13px;padding:9px 12px}
 @media(max-width:600px){.slot__btn{font-size:12px;padding:10px}.slot{gap:8px;padding-left:12px}.schedule-fee-note{font-size:13px}}
 
-/* 教育委員会の実績を五十音順で常時表示 */
-.support-cities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px auto;max-width:900px}
-.support-cities li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px 10px;text-align:center}
-.support-cities strong{font-size:17px;color:var(--navy);font-weight:800;white-space:nowrap}
-.support-cities span{font-size:12px;color:var(--ink-sub);line-height:1.5}
-.support-intro{text-align:center;font-weight:700;line-height:1.9}
-.support>.support-note{text-align:center;margin:18px auto 0;max-width:900px}
-.support-organizer{text-align:center;font-size:13px;margin-top:20px;color:var(--ink-sub)}
-@media(max-width:600px){.support-cities{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:20px auto}.support-cities li{padding:14px 5px}.support-cities strong{font-size:14px}.support-cities span{font-size:11px}.support-intro{font-size:14px}.support .section__title{margin-bottom:18px}}
+
+/* 後援実績は枠を使わず、読みやすい短い一覧にまとめる */
+.support--compact{padding-top:36px;padding-bottom:36px}
+.support--compact .section__title{margin-bottom:20px;font-size:clamp(22px,4.5vw,28px)}
+.support-text{max-width:820px;margin:0 auto;text-align:center;font-size:15px;line-height:1.9}
+.support-text p{margin:12px 0}.support-text b{color:var(--navy);font-size:14px}
+.support-text .support-other{font-weight:800;color:var(--navy);margin:12px 0 0}
+.support--compact>.support-note{margin:14px auto 0;font-size:11px;line-height:1.7}
+@media(max-width:600px){.support--compact{padding-top:28px;padding-bottom:28px}.support--compact .section__title{margin-bottom:16px}.support-text{font-size:14px;line-height:1.9}.support-text p{margin:10px 0}.support-text b{font-size:13px}}
