@@ -1,14 +1,9 @@
 // 開催日程データ(毎週月曜日0時に申込みフォームの内容から自動更新)
 // full: true にすると「満席」と表示され、予約ボタンが押せなくなります
 // 開催日を過ぎた回は自動で表示されなくなります
-const UPDATED = "2026-11-02";
+const UPDATED = "2026-11-09";
 
 const EVENTS = [
-  { date: "2026-11-07", start: "11:00", end: "12:00", pref: "大阪", city: "東大阪市", venue: "文化創造館", address: "大阪府東大阪市御厨南2-3-4", full: false },
-  { date: "2026-11-07", start: "13:00", end: "14:00", pref: "大阪", city: "東大阪市", venue: "市民多目的センター", address: "大阪府東大阪市高井田元町1-2-13", full: false },
-  { date: "2026-11-08", start: "11:00", end: "12:00", pref: "大阪", city: "大阪市", venue: "平野区民センター", address: "大阪市平野区長吉出戸5-3-58", full: false },
-  { date: "2026-11-08", start: "13:00", end: "14:00", pref: "大阪", city: "大阪市", venue: "東住吉会館", address: "大阪市東住吉区東田辺2-11-28", full: false },
-  { date: "2026-11-08", start: "15:00", end: "16:00", pref: "大阪", city: "大阪市", venue: "住之江会館", address: "大阪市住之江区南加賀屋3-1-20", full: false },
   { date: "2026-11-22", start: "11:00", end: "12:00", pref: "兵庫", city: "尼崎市", venue: "すこやかプラザ", address: "兵庫県尼崎市七松町1-3-1 フェスタ立花南館5階", full: false },
   { date: "2026-11-22", start: "13:00", end: "14:00", pref: "兵庫", city: "尼崎市", venue: "塚口さんさんタウン", address: "兵庫県尼崎市南塚口町2-1", full: false },
   { date: "2026-11-28", start: "10:30", end: "11:40", pref: "広島", city: "広島市", venue: "南区民文化センター", address: "広島市南区比治山本町16-27", full: false },
